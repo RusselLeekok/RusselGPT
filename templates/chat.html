@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RusselGPT</title>
+    <link rel="icon" href="/static/images/openai-logo-DmWoKcI3.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/static/images/openai-logo-DmWoKcI3.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/static/chat.css">
+    
+    <style>
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            overflow: auto;
+        }
+        code {
+            font-family: monospace;
+        }
+        .tooltip {
+            position: absolute;
+            background-color: black;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .new-chat-button:hover .tooltip {
+            display: block;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <div class="header-left">
+                <button class="menu-button" aria-label="菜单" onclick="toggleSidebar()">
+                    <span class="menu-icon"></span>
+                </button>
+                <button class="new-chat-button" aria-label="清空聊天记录" id="new-chat-button">
+                    <span class="new-chat-icon"></span>
+                    <div class="tooltip">清空聊天记录</div>
+                </button>
+            </div>
+            <div class="header-mindle">
+                <h1 class="title-text" style="font-family: 宋体;">莫西子诗</h1>
+            </div>
+            <div class="header-right"></div>
+        </header>
+
+        <aside class="sidebar" id="sidebar">
+            <div class="close-button-container">
+                <button class="close-button" aria-label="关闭侧边栏" onclick="toggleSidebar()">x</button>
+            </div>
+            <div id="session-list">
+                <!-- 侧边栏内容 -->
+            </div>
+
+        </aside>
+
+        <div class="chat-main" role="main">
+            <div class="logo-container" id="logo-container">
+                <img src="/static/images/OpenAI-announces.jpg" alt="Logo" class="logo">
+            </div>
+            <div class="suggestions" id="suggestions">
+                <button class="suggestion-card" id="suggestion1" onclick="sendSuggestion('给我提供一些思路关于如何学习前端')">
+                    <span class="icon icon-email" aria-hidden="true"></span>
+                    <span>给我提供一些思路关于如何学习前端</span>
+                </button>
+                <button class="suggestion-card" id="suggestion2" onclick="sendSuggestion('解释一下马斯克的第一性原理')">
+                    <span class="icon icon-webpage" aria-hidden="true"></span>
+                    <span>解释一下马斯克的第一性原理</span>
+                </button>
+                <button class="suggestion-card" id="suggestion3" onclick="sendSuggestion('规划一次旅行，像本地人一样游览厦门')">
+                    <span class="icon icon-clothing" aria-hidden="true"></span>
+                    <span>规划一次旅行,像本地人一样游览厦门</span>
+                </button>
+                <button class="suggestion-card" id="suggestion4" onclick="sendSuggestion('写一封感谢信给我的导师')">
+                    <span class="icon icon-study" aria-hidden="true"></span>
+                    <span>写一封感谢信给我的导师</span>
+                </button>                
+            </div>
+            <div id="chat-screen" class="hidden">
+                <div class="chat-log" id="chat-box">
+                    <!-- Chat messages will go here -->
+                </div>
+            </div>
+        </div>
+
+        <footer class="chat-footer">
+            <div class="chat-input-container">
+                <textarea id="message-input" class="chat-input" rows="1" placeholder="输入消息..."></textarea>
+                <button type="submit" class="send-button" aria-label="发送" onclick="sendMessage()">
+                    <span class="send-icon"></span>
+                </button>
+            </div>
+            <p class="disclaimer">用抖音豆包吧,我只是玩玩</p>
+        </footer>
+    </div>
+    <script src="/static/chat.js"></script>
+    <script>
+        document.getElementById('new-chat-button').addEventListener('mouseover', function (e) {
+            const tooltip = this.querySelector('.tooltip');
+            tooltip.style.display = 'block';
+            tooltip.style.left = `${e.pageX + 15}px`; // 使提示框离按钮远一点
+            tooltip.style.top = `${e.pageY + 15}px`; 
+        });
+        
+        document.getElementById('new-chat-button').addEventListener('mouseout', function () {
+            const tooltip = this.querySelector('.tooltip');
+            tooltip.style.display = 'none';
+        });
+        </script>
+    
+</body>
+</html>

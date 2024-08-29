@@ -1,0 +1,371 @@
+@charset "UTF-8";
+:root {
+    font-family: Söhne,-apple-system,BlinkMacSystemFont,Helvetica,sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%
+}
+
+.oai-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 15px;
+    background-color: #fff
+    
+}
+
+.oai-header img {
+    display: flex;
+    height: auto;
+    width: 120px;
+    border-radius: 15px;
+    background-color: #fff;
+    fill: #202123
+}
+
+body {
+    background-color: #fff;
+    display: block;
+    margin: 0
+}
+
+a {
+    font-weight: 400;
+    text-decoration: inherit;
+    color: #10a37f
+}
+
+.main-container {
+    flex: 1 0 auto;
+    min-height: 0;
+    display: grid;
+    box-sizing: border-box;
+    grid-template-rows: [left-start center-start right-start] 1fr [left-end center-end right-end];
+    grid-template-columns: [left-start center-start] 1fr [left-end right-start] 1fr [center-end right-end];
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    grid-column-gap: 160px;
+    column-gap: 160px;
+    padding: 0px 80px 80px 80px;
+    width: 100%
+}
+
+@media (max-width: 480px) {
+    .main-container {
+        padding:0
+    }
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    white-space: normal;
+    border-radius: 5px;
+    position: relative;
+    grid-area: center;
+    box-shadow: none;
+    vertical-align: baseline;
+    box-sizing: content-box
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 0 40px 40px;
+    border-radius: 3px;
+    box-shadow: none;
+    width: 320px;
+    box-sizing: content-box;
+    flex-shrink: 0
+}
+
+.title-wrapper {
+    padding: 0px 40px 15px;
+    box-sizing: content-box
+}
+
+.title {
+    font-size: 32px;
+    font: "Söhne";
+    margin: 24px 0 0;
+    color: #2d333a;
+    width: 320px;
+    text-align: center
+}
+
+.subtitle {
+    font-size: 24px;
+    font: "Söhne";
+    margin: 24px 0 0;
+    color: #2d333a;
+    text-align: center
+}
+
+.sso-list {
+    margin-top: 16px
+}
+
+.input-wrapper {
+    position: relative;
+    margin-bottom: 25px;
+    width: 320px;
+    box-sizing: content-box
+}
+
+.username-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #c2c8d0;
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #2d333a;
+    font-family: inherit;
+    font-size: 16px;
+    height: 52px;
+    line-height: 1.1;
+    outline: none;
+    padding-block:1px;padding-inline:2px;padding: 0 16px;
+    transition: box-shadow .2s ease-in-out,border-color .2s ease-in-out;
+    width: 100%;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0
+}
+
+.username-input:focus,.username-input:valid {
+    border: 1px solid #10a37f;
+    outline: none
+}
+
+.username-input:focus-within {
+    box-shadow: 1px #10a37f
+}
+
+.username-input:focus+.email-label {
+    font-size: 14px;
+    top: 0;
+    left: 10px;
+    color: #10a37f;
+    background-color: #fff
+}
+
+.username-input.error {
+    border: 1px solid #d00e17
+}
+
+.username-input.error+.email-label {
+    color: #d00e17
+}
+
+.invalid-email-error-message {
+    color: #d00e17;
+    display: flex;
+    align-items: center;
+    margin: 4px 0 12px;
+    font-size: 12px;
+    line-height: 16px; /* 修改这一行 */
+}
+#register-success{
+    color: #10a37f;
+    display: flex;
+    align-items: center;
+    margin: 4px 0 12px;
+    font-size: 12px;
+    line-height: 16px; /* 修改这一行 */
+}
+.error-icon {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    margin-right: 8px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex-shrink: 0;
+    vertical-align: middle; /* 添加这一行 */
+}
+
+
+
+.invalid-email-error-message.visible {
+    display: flex
+}
+
+.password-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #c2c8d0;
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #2d333a;
+    font-family: inherit;
+    font-size: 16px;
+    height: 52px;
+    line-height: 1.1;
+    outline: none;
+    padding-block: 1px;
+    padding-inline: 2px;
+    padding: 0 16px;
+    transition: box-shadow .2s ease-in-out, border-color .2s ease-in-out;
+    width: 100%;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0;
+}
+
+.password-input:focus,
+.password-input:valid {
+    border: 1px solid #10a37f;
+    outline: none;
+}
+
+.password-input:focus-within {
+    box-shadow: 1px #10a37f;
+}
+
+.password-input:focus + .email-label {
+    font-size: 14px;
+    top: 0;
+    left: 10px;
+    color: #10a37f;
+    background-color: #fff;
+}
+
+.password-input.error {
+    border: 1px solid #d00e17;
+}
+
+.password-input.error + .email-label {
+    color: #d00e17;
+}
+
+.continue-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 52px;
+    width: 320px;
+    background-color: #10a37f;
+    color: #fff;
+    margin: 24px 0 0;
+    border-radius: 6px;
+    padding: 4px 16px;
+    font: inherit;
+    border-width: 0;
+    cursor: pointer
+}
+
+.continue-btn:hover {
+    box-shadow: inset 0 0 0 150px #0000001a
+}
+
+.otp-link-btn {
+    width: 100%;
+    color: #10a37f;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    align-self: stretch;
+    margin-top: 10px;
+    margin-bottom: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    justify-content: center
+}
+
+.other-page {
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 0;
+    font-size: 16px;
+    width: 320px
+}
+
+.other-page-link {
+    padding: 4px
+}
+
+.divider-wrapper {
+    display: flex;
+    flex-direction: row;
+    border: none;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    padding: 24px 0 0;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    vertical-align: baseline
+}
+
+.divider-wrapper:before,.divider-wrapper:after {
+    content: "";
+    border-bottom: 2px solid #c2c8d0;
+    flex: 1 0 auto;
+    height: .5em;
+    margin: 0
+}
+
+.divider {
+    text-align: center;
+    flex: .2 0 auto;
+    margin: 0;
+    height: 12px
+}
+
+
+.social-text {
+    text-align: left;
+    position: relative
+}
+
+.oai-footer {
+    text-align: center;
+    padding: 12px 0 24px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6e6e80;
+    flex: 0 0 auto
+}
+
+.separator:before {
+    content: " | ";
+    margin: 0 8px
+}

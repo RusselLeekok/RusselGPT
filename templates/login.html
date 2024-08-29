@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div id="root">
+        <div class="page-wrapper">
+            <header class="oai-header">
+                <img src="/static/images/dog.jpg" alt="Russel 的小狗">
+            </header>
+            <main class="main-container">
+                <section class="content-wrapper">
+                    <div class="title-wrapper">
+                        <h1 class="title">欢迎回来</h1>
+                    </div>
+                    <div class="login-container">
+                        <div class="input-wrapper">
+                            <input
+                                class="username-input"
+                                id="username-input"
+                                name="username"
+                                autocomplete="username"
+                                autocapitalize="none"
+                                spellcheck="false"
+                                required=""
+                                placeholder="用户名*"
+                            />
+                            <div class="invalid-email-error-message" id="username-error" style="display: none;">
+                                <img class="error-icon" src="/static/images/error-icon-BaFi8GTB.svg" />
+                                用户名不能为空。
+                            </div>
+                            <div class="invalid-email-error-message" id="username-space-error" style="display: none;">
+                                <img class="error-icon" src="/static/images/error-icon-BaFi8GTB.svg" />
+                                用户名不能包含空格。
+                            </div>
+                        </div>
+                        <div class="input-wrapper" id="input-wrapper">
+                            <input
+                                class="password-input"
+                                type="password"
+                                id="password-input"
+                                name="password"
+                                autocomplete="new-password"
+                                autocapitalize="none"
+                                spellcheck="false"
+                                required=""
+                                placeholder="密码*"
+                            />
+                            <div class="invalid-email-error-message" id="password-error" style="display: none;">
+                                <img class="error-icon" src="/static/images/error-icon-BaFi8GTB.svg" />
+                                密码不能为空。
+                            </div>
+                            <div class="invalid-email-error-message" id="invaild-account" style="display: none;">
+                                <img class="error-icon" src="/static/images/error-icon-BaFi8GTB.svg" />
+                                账号或密码错误错误。
+                            </div>
+                        </div>
+                        <button class="continue-btn" id="continue-btn">登录</button>
+                        <p class="other-page">
+                            还没有帐户？
+                            <a class="other-page-link" href="register">注册</a>
+                        </p>
+                        <div class="divider-wrapper">
+                            <span class="divider">@Russel Lee</span>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer class="oai-footer">
+                <a href="https://openai.com/policies/terms-of-use">使用条款</a>
+                <span class="separator"></span>
+                <a href="https://openai.com/policies/privacy-policy">隐私政策</a>
+            </footer>
+        </div>
+    </div>
+    <script src="/static/test.js"></script>
+</body>
+</html>
